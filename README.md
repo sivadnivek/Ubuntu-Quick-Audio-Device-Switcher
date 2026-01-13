@@ -2,7 +2,9 @@
 
 This script allows you to quickly switch between available audio devices on Ubuntu using PulseAudio.
 I am editing the script to hopefully allow pactl to be used instead of pacmd, because i don't use pacmd.
-Maybe i should just use pacmd instead. Lmao!
+Maybe i should just use pacmd instead. Lmao! Something's still going wrong, not sure how to debug.
+I think with `pactl` it's largely just a permissions problem. I don't really want to run Pulse in a daemonized way.
+I guess I could, but idk... I haven't needed that before at all. For whatever reason, it also doesn't happen automagically on my installation.
 
 ## Prerequisites
 
@@ -40,6 +42,6 @@ If there are no other available sinks, the script will keep on using current act
 ## Notes
 
 - This script only switches audio output devices, not input devices or recording sources.
-- If you encounter the error "No PulseAudio daemon running, or not running as session daemon" when running the script with `sudo`, try running it without `sudo`. Alternatively, you can run the script as a non-root user by adding your user to the `pulse-access` group using the following command: `sudo usermod -aG pulse-access your_username`.
+- If you encounter the error "No PulseAudio daemon running, or not running as session daemon" when running the script with `sudo`, try running it without `sudo`. Alternatively, you can run the script as a non-root user by adding your user to the `pulse-access` group using the following command: `sudo usermod -aG pulse-access your_username`. <---- for me, this group didn't exist, probably because of aforementioned Pulse daemon not being a thing for me. I did try `sudo usermod -aG audio my_username` and that seemed to stop the error ("No PulseAudio daemon...") from occurring, but then the script still doesn't work.
 - The script `audio-switcher-exclude.sh` skips over sinks with a specific device description. If you have a different sink that you want to exclude, you can modify `exclude_dev` on line 3 of the script accordingly. You can also use the following command: `pacmd list-sinks` to find the device description of the sink you want to exclude.
-- This script was tested on Ubuntu 22.04.2 LTS.
+- This script is being tested on Ubuntu 24.04.3 LTS.
