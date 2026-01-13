@@ -1,6 +1,8 @@
 # Ubuntu Quick Audio Device Switcher
 
 This script allows you to quickly switch between available audio devices on Ubuntu using PulseAudio.
+I am editing the script to hopefully allow pactl to be used instead of pacmd, because i don't use pacmd.
+Maybe i should just use pacmd instead. Lmao!
 
 ## Prerequisites
 
