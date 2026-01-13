@@ -25,4 +25,5 @@ for input_index in "${input_indexes[@]}"; do
     pactl move-sink-input "$input_index" "$next_sink_index" &> /dev/null
 done
 
-#i think this should wor
+# i think this should work but it doesn't. i did try `usermod -aG audio <my username>` but to no avail.
+# however, i didn't get the perms error when i did that so i think i'm headed in the right direction.
