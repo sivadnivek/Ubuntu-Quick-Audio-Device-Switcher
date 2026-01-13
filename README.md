@@ -13,7 +13,7 @@ Maybe i should just use pacmd instead. Lmao!
 
 1. Clone this repository or download the `audio-switcher.sh` script.
 2. Open a terminal and navigate to the directory where you cloned the repository.
-3. Run the following command to make the script executable: `chmod +x audio-switcher.sh`.
+3. Run the following command to make the script executable: `chmod 755 audio-switcher.sh`.
 3. Run the script using the following command: `./audio-switcher.sh`.
 4. The script will switch to the next available audio output device and move all inputs to it.
 4. You can assign a keyboard shortcut to run the script using the instructions below.
